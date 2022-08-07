@@ -1,7 +1,8 @@
 plugins {
     id 'com.android.application'
-    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android'
 }
+
 
 android {
     compileSdk 32
@@ -33,8 +34,8 @@ android {
 
 dependencies {
 
-
     implementation 'androidx.core:core-ktx:1.7.0'
+
     implementation 'androidx.appcompat:appcompat:1.4.2'
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
@@ -47,13 +48,14 @@ dependencies {
 
     //rxJava
     implementation "io.reactivex.rxjava3:rxjava:3.1.5"
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
 
     //Glide
     implementation 'com.github.bumptech.glide:glide:4.13.2'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.13.2'
 
     //Gson
-    implementation 'com.google.code.gson:gson:2.9.1'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 
     //Paging
     implementation "androidx.paging:paging-runtime:3.1.1"
@@ -61,4 +63,6 @@ dependencies {
     //ViewModel, LiveData
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.0-alpha01"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.6.0-alpha01"
+
+
 }
