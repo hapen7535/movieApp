@@ -1,5 +1,6 @@
 package com.example.movieapp.data.api
 
+import com.example.movieapp.BuildConfig
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -8,7 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.create
 import java.util.concurrent.TimeUnit
 
-const val API_KEY = "API"
+const val API_KEY = BuildConfig.MOVIE_DB_API_KEY
 const val BASE_URL = "https://api.themoviedb.org/3/"
 
 const val POSTER_BASE_URL = "https://image.tmdb.org/t/p/w342"
