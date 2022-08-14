@@ -1,5 +1,6 @@
 package com.example.movieapp.single_movie_details
 
+import android.arch.lifecycle.ViewModelProvider
 import android.graphics.Movie
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.movieapp.R
 import com.example.movieapp.data.api.TheMovieDBClient
 import com.example.movieapp.data.api.TheMovieDBInterface
+import android.arch.lifecycle.ViewModelProviders
 
 class SingleMovie : AppCompatActivity() {
 
@@ -29,11 +31,11 @@ class SingleMovie : AppCompatActivity() {
         })
     }
 
-    private fun getViewModel(movieId : Int) : SingleMovieViewModel{
-        return ViewModelProviders.of(this, object : ViewModelProvider.Factory{
-            override fun <T : ViewModel?> create(modelClass : Class<T>) : T {
+    private fun getViewModel(movieId:Int): SingleMovieViewModel {
+        return ViewModelProviders.of(this, object : ViewModelProvider.Factory {
+            override fun <T : ViewModel?> create(modelClass: Class<T>): T {
                 @Suppress("UNCHECKED_CAST")
-                return SingleMovieViewModel(movieRepository, movieId) as T
+                return SingleMovieViewModel(movieRepository,movieId) as T
             }
         })[SingleMovieViewModel::class.java]
     }
